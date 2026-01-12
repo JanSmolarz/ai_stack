@@ -1,0 +1,14 @@
+services:
+  agent3_analytics:
+    build: .
+    container_name: agent3_analytics
+    ports:
+      - "8003:8000"
+    networks:
+      - ai_network
+    environment:
+      - COLLECTION=agent3_stats
+
+networks:
+  ai_network:
+    external: true

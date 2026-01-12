@@ -1,0 +1,17 @@
+services:
+  node-red:
+    image: nodered/node-red:latest
+    container_name: node-red
+    ports:
+      - "1880:1880"
+    volumes:
+      - nodered_data:/data
+    networks:
+      - ai_network
+
+volumes:
+  nodered_data:
+
+networks:
+  ai_network:
+    external: true

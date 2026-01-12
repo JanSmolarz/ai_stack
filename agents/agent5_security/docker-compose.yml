@@ -1,0 +1,14 @@
+services:
+  agent5_security:
+    build: .
+    container_name: agent5_security
+    ports:
+      - "8005:8000"
+    networks:
+      - ai_network
+    environment:
+      - COLLECTION=agent5_audit
+
+networks:
+  ai_network:
+    external: true
