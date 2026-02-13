@@ -3,3 +3,6 @@ uvicorn
 langchain
 langchain-community
 qdrant-client
+fastembed
+psycopg2
+streamlit
