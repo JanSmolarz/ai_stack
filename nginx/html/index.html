@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Stack Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #111827;
+            --card-hover: #1f2937;
+            --border: #1f2933;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --accent: #38bdf8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, #020617, #0f172a);
+            color: var(--text);
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        p.subtitle {
+            margin-top: 8px;
+            color: var(--muted);
+        }
+
+        .grid {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        a.card {
+            display: block;
+            padding: 22px;
+            background: var(--card);
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+
+        a.card:hover {
+            background: var(--card-hover);
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .desc {
+            margin-top: 6px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(56,189,248,0.15);
+            color: var(--accent);
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 12px;
+            color: var(--muted);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🧠 AI Stack</h1>
+<p class="subtitle">Dashboard do zarządzania aplikacjami</p>
+
+<div class="grid">
+
+    <a class="card" href="/open-webui/">
+        <div class="title">OpenWebUI</div>
+        <div class="desc">Interfejs do pracy z LLM (Ollama)</div>
+        <span class="badge">UI</span>
+    </a>
+
+    <a class="card" href="/node-red/">
+        <div class="title">Node-RED</div>
+        <div class="desc">Automatyzacja, flow, integracje</div>
+        <span class="badge">Automation</span>
+    </a>
+
+    <a class="card" href="/agent1_student/">
+        <div class="title">Agent – Student</div>
+        <div class="desc">Agent edukacyjny</div>
+        <span class="badge">Agent</span>
+    </a>
+
+    <a class="card" href="/agent2_ticket/">
+        <div class="title">Agent – Tickets</div>
+        <div class="desc">Obsługa zgłoszeń i ticketów</div>
+        <span class="badge">Agent</span>
+    </a>
+
+    <a class="card" href="/agent3_analytics/">
+        <div class="title">Agent – Analytics</div>
+        <div class="desc">Analiza danych i raporty</div>
+        <span class="badge">Agent</span>
+    </a>
+
+    <a class="card" href="/agent4_bos/">
+        <div class="title">Agent – BOS</div>
+        <div class="desc">Business Operations</div>
+        <span class="badge">Agent</span>
+    </a>
+
+    <a class="card" href="/agent5_security/">
+        <div class="title">Agent – Security</div>
+        <div class="desc">Audyt, logi, bezpieczeństwo</div>
+        <span class="badge">Agent</span>
+    </a>
+
+    <a class="card" href="/qdrant/">
+        <div class="title">Qdrant</div>
+        <div class="desc">Vector Database (API)</div>
+        <span class="badge">DB</span>
+    </a>
+
+    <a class="card" href="/ollama/">
+        <div class="title">Ollama</div>
+        <div class="desc">LLM API backend</div>
+        <span class="badge">API</span>
+    </a>
+
+</div>
+
+<footer>
+    AI Stack • Nginx + Docker • localhost
+</footer>
+
+</body>
+</html>

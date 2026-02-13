@@ -1,0 +1,129 @@
+version: "3.9"
+
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - ai_network
+
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/app/data
+    networks:
+      - ai_network
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    restart: unless-stopped
+    ports:
+      - "3000:8080"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+    depends_on:
+      - ollama
+    volumes:
+      - open_webui_data:/app/backend/data
+    networks:
+      - ai_network
+
+  node-red:
+    image: nodered/node-red:latest
+    restart: unless-stopped
+    ports:
+      - "1880:1880"
+    volumes:
+      - nodered_data:/data
+    networks:
+      - ai_network
+
+  agent1_student:
+    build: ./agent1
+    restart: unless-stopped
+    ports:
+      - "8001:8000"
+    environment:
+      - COLLECTION=agent1_student
+    depends_on:
+      - qdrant
+    networks:
+      - ai_network
+
+  agent2_ticket:
+    build: ./agent2
+    restart: unless-stopped
+    ports:
+      - "8002:8000"
+    environment:
+      - COLLECTION=agent2_tickets
+    depends_on:
+      - qdrant
+    networks:
+      - ai_network
+
+  agent3_analytics:
+    build: ./agent3
+    restart: unless-stopped
+    ports:
+      - "8003:8000"
+    environment:
+      - COLLECTION=agent3_stats
+    depends_on:
+      - qdrant
+    networks:
+      - ai_network
+
+  agent4_bos:
+    build: ./agent4
+    restart: unless-stopped
+    ports:
+      - "8004:8000"
+    environment:
+      - COLLECTION=agent4_bos
+    depends_on:
+      - qdrant
+    networks:
+      - ai_network
+
+  agent5_security:
+    build: ./agent5
+    restart: unless-stopped
+    ports:
+      - "8005:8000"
+    environment:
+      - COLLECTION=agent5_audit
+    depends_on:
+      - qdrant
+    networks:
+      - ai_network
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - ai_network
+
+volumes:
+  qdrant_data:
+  ollama_data:
+  open_webui_data:
+  nodered_data:
+
+networks:
+  ai_network:
+    external: true
