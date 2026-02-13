@@ -199,9 +199,9 @@ Projekt przygotowany w celach badawczych i wdrożeniowych.
 
 Autorzy:
 
--   Rafał Sommer
--   Daniel Trzebiatowski
--   Jan Smolarz
--   Jakub Ładkowski
+-   Rafał S
+-   Daniel T
+-   Jan S
+-   Jakub Ł
 
 
