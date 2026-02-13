@@ -1,0 +1,41 @@
+{
+  "category": "dane_osobowe",
+  "qa_pairs": [
+    {
+      "question": "Jak zmienić swoje dane osobowe w systemie?",
+      "answer": "Aby zmienić dane osobowe takie jak adres, imię lub nazwisko, należy złożyć odpowiednie podanie. Zmiany nr telefonu lub adresu e-mail można dokonać poprzez specjalny formularz dostępny w systemie studentów. Wszystkie zmiany wymagają potwierdzenia przez biuro.",
+      "category": "dane_osobowe",
+      "type": "procedure",
+      "id": "584e8d4e-c3e3-47d8-960c-987177a087f2",
+      "metadata": {
+        "category": "dane_osobowe",
+        "type": "procedure",
+        "source": "manually_created_qa_pair"
+      }
+    },
+    {
+      "question": "Jakie są zasady ochrony danych osobowych dla studentów?",
+      "answer": "Uniwersytet zobowiązany jest do ochrony danych osobowych studentów zgodnie z RODO. Dane przetwarzane są wyłącznie w celach związanych z realizacją studiów. Studenci mają prawo dostępu do swoich danych oraz prawo do ich poprawy.",
+      "category": "dane_osobowe",
+      "type": "information",
+      "id": "f9b73c50-1092-4246-8d56-f1034050b615",
+      "metadata": {
+        "category": "dane_osobowe",
+        "type": "information",
+        "source": "manually_created_qa_pair"
+      }
+    },
+    {
+      "question": "Gdzie zgłosić zmianę numeru telefonu lub maila?",
+      "answer": "Zmianę numeru telefonu lub adresu e-mail należy zgłosić w dekanatcie lub poprzez portal studenta. Wymagane jest wypełnienie odpowiedniego formularza. Zmiana zostaje wprowadzona w ciągu kilku dni roboczych.",
+      "category": "dane_osobowe",
+      "type": "procedure",
+      "id": "cca9cade-9928-45a4-8c98-f2d13543ed42",
+      "metadata": {
+        "category": "dane_osobowe",
+        "type": "procedure",
+        "source": "manually_created_qa_pair"
+      }
+    }
+  ]
+}
