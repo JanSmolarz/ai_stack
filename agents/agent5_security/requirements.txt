@@ -6,3 +6,11 @@ qdrant-client
 fastembed
 psycopg2
 streamlit
+pydantic
+langchain-core
+langchain-text-splitters
+requests
+streamlit
+python-docx
+docx2txt
+pypdf
